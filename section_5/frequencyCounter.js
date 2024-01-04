@@ -2,7 +2,7 @@
 //  The function should return true if every value in the array has it's corresponding value squared in the second array. 
 //  The frequency of values must be the same.
 
-// 	Same([1, 2, 3], [f, 1, 9])    //true
+// 	Same([1, 2, 3], [3, 1, 9])    //true
 //	Same([1, 2, 3] [1, 9])        //false
 //	Same([1, 2, 1], [4, 4, 1])   //false (must be same frequency)
 
