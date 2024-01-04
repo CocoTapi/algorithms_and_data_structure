@@ -6,8 +6,7 @@
 // countUniqueValues([-1, -2, 3, 4, 4, 5, 6, 6, 8, 8, 9]) => 8
 // countUniqueValues([]) => 0
 
-// step
-// compare i to j (i=0, j=1)
+// step: using 2 pointers (multiple pointers)
 
 function countUniqueValues(arr) {
     var i = 0;

@@ -3,7 +3,7 @@
 //validAnagram("aaz", "zza") => false
 //validAnagram("awesome", "awesom") => false
 
-//steps
+//steps: using frequency counter
 //check if the both are the same length
 // make an object. when letter exist: +1, otherwise set to 1 
 // can't find letter or letter is zero, return false. otherwise -1
