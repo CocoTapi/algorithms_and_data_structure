@@ -15,7 +15,7 @@
 
 //time: o(n), space: o(1)
 function minSubArrayLen(nums, sum) {
-    let total = 0;
+    let total = 0; //
     let start = 0;
     let end = 0;
     let minLen = Infinity;
@@ -23,16 +23,16 @@ function minSubArrayLen(nums, sum) {
     while (start < nums.length) {
       // if current window doesn't add up to the given sum then 
           // move the window to right
-      if(total < sum && end < nums.length){
-        total += nums[end];
-              end++;
+      if(total < sum && end < nums.length){ //0 < 11 && 0 < 7
+        total += nums[end]; //4 +3=7+ 3=10+8 = 18 //8+1=9 //9+2=11 //3+3=6 
+              end++;//1=>2=>3=>4=>5=>6=> 7
       }
       // if current window adds up to at least the sum given then
           // we can shrink the window 
       else if(total >= sum){
-        minLen = Math.min(minLen, end-start);
-              total -= nums[start];
-              start++;
+        minLen = Math.min(minLen, end-start); //(inf, 4-0) => 4 // (4, 4-1=3)=> 3 //(3, 4-2=2)=> 2 (2, 6-3=3)=> 2
+              total -= nums[start]; // 18-4=14 //14-3=11 //11-3=8 //11-8=3
+              start++; //1 //2 //3 //4
       } 
       // current total less than required total but we reach the end, need this or else we'll be in an infinite loop 
       else {
@@ -40,5 +40,5 @@ function minSubArrayLen(nums, sum) {
       }
     }
    
-    return minLen === Infinity ? 0 : minLen;
+    return minLen === Infinity ? 0 : minLen; //2
   }
