@@ -23,20 +23,47 @@ class BinarySearchTree {
                     if ( current.left === null) {
                         current.left = newNode;
                         return this;
-                    } else {
+                    } 
                         current = current.left;
-                    }
-                } else {
-                    if ( current.right === null) {
-                        current.right = newNode;
-                        return this;
-                    } else {
-                        current = current.right;
-                    }
                 } 
+                if ( current.right === null) {
+                    current.right = newNode;
+                    return this;
+                } 
+                current = current.right; 
             }
         }
-
+    }
+    find(value) {
+        if (this.root === null) return false;
+        var current = this.root;
+        var found = false;
+        while(current && !found){
+            if (value < current.value) {
+                current = current.left;
+            } else if (value > current.value) {
+                current = current.right;
+            } else {
+                return true;
+            }
+        }
+        if (!found) return undefined;
+        return current;
+    }
+    contains(value) {
+        if (this.root === null) return false;
+        var current = this.root;
+        var found = false;
+        while(current && !found){
+            if (value < current.value) {
+                current = current.left;
+            } else if (value > current.value) {
+                current = current.right;
+            } else {
+                found = true;
+            }
+        }
+        return false;
     }
 
 }
