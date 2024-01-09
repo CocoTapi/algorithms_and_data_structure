@@ -53,13 +53,26 @@ class DoublyLinkedList{
         this.length--;
         return oldHead;
     }
+    unshift(val) {
+        var newNode = new Node(val);
+        if (this.length === 0) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            this.head.prev = newNode;
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++;
+        return this;
+    }
 }
 
 var list = new DoublyLinkedList();
-console.log(list.push(98));
-console.log(list.push(99));
-console.log(list.push(100));
-console.log(list.push(101));
-console.log(list.shift());
+console.log(list.push("Harry"));
+console.log(list.push("Ron"));
+console.log(list.push("Harmaionie"));
+console.log(list.unshift("Malfoy"));
+
 
 
