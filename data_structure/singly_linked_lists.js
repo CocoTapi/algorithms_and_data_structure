@@ -13,7 +13,7 @@ class SinglyLinkedList{
     }
     push(val){
         var newNode = new Node(val);
-        if (this.head){
+        if (!this.head){
             this.head = newNode;
             this.tail = this.head;
         } else {
@@ -103,6 +103,30 @@ class SinglyLinkedList{
         this.length--;
         return removed;
     }
+    // //show the list in one line 
+    print(){
+        var arr = [];
+        var current = this.head;
+        while(current) {
+            arr.push(current.val);
+            current = current.next
+        }
+        console.log(arr);
+    }
+    reverse() {
+        var node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+        var next;
+        var previous = null;
+        for (var i = 0; i < this.length; i++){
+            next = node.next;
+            node.next = previous;
+            previous = node;
+            node = next;
+        }
+        return this;
+    }
 }
 
 var list = new SinglyLinkedList();
@@ -110,5 +134,15 @@ list.push("Apple");
 list.push("Banana");
 list.push("Cherry");
 list.push("Dragon Fruits");
+// list.pop();
+// list.shift();
+// list.unshift("Apple Pie");
 
+list.set(1, "Banana cake");
+list.insert(3, "cranberry");
+list.remove(3);
+list.print();
+//console.log(list.get(2));
+// list.reverse();
+// list.print();
 
