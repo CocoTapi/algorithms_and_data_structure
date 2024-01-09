@@ -80,11 +80,25 @@ class SinglyLinkedList{
         }
         return false;
     }
+    insert(index, val) {
+        if (index < 0 || index > this.length) return false;
+        if (index === this.length) return !!this.push(val);
+        // "!!" means return "false" 
+        if (index === 0) return !!this.unshift(val);
+        var newNode = new Node(val);
+        var previous =  this.get(index - 1);
+        var temp = previous.next;
+        previous.next = newNode;
+        newNode.next = temp;
+        this.length++;
+        return true;
+    }
 }
 
 var list = new SinglyLinkedList();
-list.push("Hello");
-list.push("Goodbye");
-list.push("Afternoon");
-list.push("Good evening");
+list.push("Apple");
+list.push("Banana");
+list.push("Cherry");
+list.push("Dragon Fruits");
+
 
