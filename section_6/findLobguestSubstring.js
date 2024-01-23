@@ -25,7 +25,7 @@ function findLongestSubstring(str) {
         //Update start pointer? : choose the bigger number: start pointer or the value
         start = Math.max(start, seen[char]);  //(0, 3) => 3 //(3, 4)=> 4 //(4, 2)=> 4
       }
-      // Update longest ? : choose the bigger number: the length from beginning to start or from start pointer to current end
+      // Update longest ? : choose the bigger number: the current longest or from start pointer to current end
       // index - beginning of substring + 1 (to include current in count)
       longest = Math.max(longest, i + 1 - start); //(0,0-0+1)=> 1 //(1, 1-0+1=2)=> 2 //3 //4 //(4, 4-3+1= 2)=> 4//(4, 5-4+1=2)=> 4//(4, 6-4+1=3)=> 4
       
