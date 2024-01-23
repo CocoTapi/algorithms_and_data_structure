@@ -13,6 +13,8 @@
 
 // time: o(n)
 function findLongestSubstring(str) {
+    if (str.length < 2) return str.length;
+
     let longest = 0;
     let seen = {};//{t: 1, h: 2=> 7, i:3=> 5, s: 4=> 6}
     let start = 0;
