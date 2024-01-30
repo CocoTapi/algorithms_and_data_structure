@@ -14,6 +14,25 @@
 //minSubArrayLen([1,4,16,22,5,7,8,9,10],95) // 0
 
 //time: o(n), space: o(1)
+
+/*
+1. make a variable to store minimal length, called minLen
+2. set 2 pointers, called start and end
+3. make a variable to store total of subarray, called total.
+4. while start < length of nums
+    a. if total is less than sum and end is less than nums' length
+        i. add the end item to total
+        ii. move end to right to add it in subarray
+    b. if total is greater than or equal to sum
+        i. choose a smaller number between the number of subarray and minLen as minLen
+        ii. remove the start item from total
+        iii. move start to right to remove it in subarray
+    c. else 
+        i. break the loop
+5. if minLen = infinity, return 0, 
+    otherwise return minLen
+*/
+
 function minSubArrayLen(nums, sum) {
     let total = 0; //
     let start = 0;
