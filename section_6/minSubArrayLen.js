@@ -61,3 +61,33 @@ function minSubArrayLen(nums, sum) {
    
     return minLen === Infinity ? 0 : minLen; //2
   }
+
+
+  //another answer
+  function minSubArrayLen(nums, sum) {
+   if(nums[0] >= sum) return 1;
+    
+   let minLen = Infinity;
+   let start = 0;
+   let end = 0;
+   let total = 0;
+   
+   while(start < nums.length ) {
+       if(total < sum && end < nums.length) {
+           total = total + nums[end];
+           end++;
+       } else if (total >= sum) {
+           minLen = Math.min(minLen, (end - start));
+           total = total - nums[start];
+           start++;
+       } else {
+           break;
+       }
+   }
+   if(minLen === Infinity) {
+       return 0;
+   } else {
+       return minLen;
+   }
+   
+}
