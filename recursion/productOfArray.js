@@ -1,3 +1,6 @@
+// productOfArray([1,2,3]) // 6
+// productOfArray([1,2,3,10]) // 60
+
 //answer 1
 function productOfArray(arr) {
     if(!arr.length) return null;
